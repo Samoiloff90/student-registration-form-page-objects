@@ -3,31 +3,12 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
+import static tests.RegistrationFormTestData.*;
+
 
 public class RegistrationFormTest extends TestBase{
 
     RegistrationPage registrationPage = new RegistrationPage();
-
-
-    String firstName = "Eugene";
-    String lastName = "Samoilov";
-    String userEmail = "samoilov@test.ru";
-    String gender = "Male";
-    String userPhone = "1234567890";
-    String birthDateDay = "1";
-    String birthDateMouth = "August";
-    String birthDateYear = "1990";
-    String birthDate = this.birthDateDay + " " + this.birthDateMouth + "," + this.birthDateYear;
-    String subjects = "Computer Science";
-    String hobbies = "Sports";
-    String file = "unix.png";
-    String userAddress = "Puskina, dom 1";
-    String userState = "NCR";
-    String userCity = "Delhi";
-
-
-
-
 
     @Test
     void successFillTest() {
@@ -58,6 +39,5 @@ public class RegistrationFormTest extends TestBase{
                 .checkResultInModal("Picture", file)
                 .checkResultInModal("Address", userAddress)
                 .checkResultInModal("State and City", userState + " " + userCity);
-
     }
 }
